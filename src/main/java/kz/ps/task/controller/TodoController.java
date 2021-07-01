@@ -33,8 +33,8 @@ public class TodoController {
     }
 
     @PutMapping("/list/{id}")
-    public ResponseEntity<Todo> updateTodo(@PathVariable(value = "id") Long employeeId, @RequestBody Todo todoDetails) {
-        Todo todo = todoRepository.getById(employeeId);
+    public ResponseEntity<Todo> updateTodo(@PathVariable(value = "id") Long todoId, @RequestBody Todo todoDetails) {
+        Todo todo = todoRepository.getById(todoId);
 
         todo.setDate(todoDetails.getDate());
         todo.setName(todoDetails.getName());
